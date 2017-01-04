@@ -1,0 +1,54 @@
+<div layout="column" layout-align="center" flex>
+
+    <md-toolbar class="md-warn">
+        <div class="md-toolbar-tools">
+            <h2 class="md-flex" layout-align="center">Download Plugin </h2>
+        </div>
+    </md-toolbar>
+
+    <md-content flex layout-padding>
+        <div ng-repeat="item in downloadlist ">
+
+            <div class="bottom-sheet-demo inset" layout="row" layout-sm="column" layout-align="center" style="padding:0px;margin:0px">
+
+                <p flex="50" style="padding:0px;margin:0px">{{ item.file | limitTo:10 }}</p>
+
+
+                <p flex="50" id="{{ item.callbackid }}" style="padding:0px;margin:0px"> {{ item.status }}</p>
+
+            </div>
+
+            <p id="{{ item.callbackid }}1"> </p>
+
+            <div layout="row" layout-sm="column" layout-align="center" style="padding:0px;margin:0px">
+                <md-button flex="50" class="md-primary md-raised" ng-click="pauseDownload(item.callbackid)">Pause </md-button>
+                <md-button flex="50" class="md-primary md-raised" ng-click="resumeDownload(item.callbackid)">Resume</md-button>
+
+            </div>
+
+
+            <div layout="row" layout-sm="column" layout-align="center" style="padding:0px;margin:0px">
+                <md-button flex="50" class="md-primary md-raised" ng-click="cancelDownload(item.callbackid)">Cancel </md-button>
+                <md-button flex="50" class="md-primary md-raised" ng-click="statusOfDownload(item.callbackid)">Status</md-button>
+            </div>
+
+
+        </div>
+
+
+        <div class="bottom-sheet-demo inset" layout="row" layout-sm="column" layout-align="center">
+            <input required type="url" ng-model="url" />
+            <md-button class="md-raised md-primary" aria-label="Menu" ng-click="addNewDownload()">
+                Add Link
+            </md-button>
+
+        </div>
+
+
+    </md-content>
+
+
+
+
+
+</div>
