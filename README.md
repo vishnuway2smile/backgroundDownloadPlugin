@@ -24,9 +24,6 @@ cd BackgroudDownload
 
 cordova plugin add https://github.com/vishnuway2smile/cordova-plugin-background-download.git
 
-# ~~ Add the Cordova Dialogs Plugin    ~~
-
-cordova plugin add cordova-plugin-dialogs
 
 # ~~ Add the IOS  Platform   ~~
 
